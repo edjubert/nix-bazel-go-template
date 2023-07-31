@@ -1,0 +1,1 @@
+# Nix + Bazel + Go template

@@ -1,0 +1,13 @@
+# Print test logs for failed tests only.
+test --test_output=errors
+
+# Nix toolchains usable using --config=nix
+build:nix --host_platform=@io_tweag_rules_nixpkgs//nixpkgs/platforms:host
+build:nix --crosstool_top=@nixpkgs_config_cc//:toolchain
+
+#
+# Extra user config
+#
+
+# Import the user's Bazel configuration if the file exist.
+try-import %workspace%/.bazelrc.user

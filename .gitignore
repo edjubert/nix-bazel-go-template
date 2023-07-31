@@ -1,0 +1,19 @@
+# Temporary files
+*.swp
+*~
+
+# IDE projects
+/.idea/
+/.ijwb/
+.vscode/
+
+# Bazel files
+/bazel-*
+/.bazelrc.user
+
+dist/
+
+# Nix files
+result
+
+.direnv
