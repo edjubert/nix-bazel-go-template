@@ -36,7 +36,7 @@ error: 1 dependencies of derivation '/nix/store/qdbd6bw5ccwj2jl1gfgxlm0ys6mzcmjb
 ```
 
 Here is the result of `nix log /nix/store/nrn95lki35l99x1skqhya2lqgk8d6pzn-nixbazelgotemplate-deps.tar.gz.drv`:
-```bash
+```log
 @nix { "action": "setPhase", "phase": "unpackPhase" }
 unpacking sources
 unpacking source archive /nix/store/8l8l8hcn1jzdrg8cg8jjqyc90hyc47cb-0hc0kj34zdpgmlnn23wbhywlmh37p124-source
@@ -51,13 +51,13 @@ no configure script, doing nothing
 @nix { "action": "setPhase", "phase": "buildPhase" }
 building
 Extracting Bazel installation...
-[32mLoading:[0m 
-[32mLoading:[0m 
-[32mLoading:[0m 
-[32mLoading:[0m 0 packages loaded
-[32mAnalyzing:[0m target //cmd/nixbazelgotemplate:nixbazelgotemplate (1 packages loaded, 0 targets configured)
+Loading: 
+Loading: 
+Loading:
+Loading: 0 packages loaded
+Analyzing: target //cmd/nixbazelgotemplate:nixbazelgotemplate (1 packages loaded, 0 targets configured)
 warning: '/nix/var/nix' does not exist, so Nix will use '/build/.local/share/nix/root' as a chroot store
-[32mAnalyzing:[0m target //cmd/nixbazelgotemplate:nixbazelgotemplate (45 packages loaded, 260 targets configured)
+Analyzing: target //cmd/nixbazelgotemplate:nixbazelgotemplate (45 packages loaded, 260 targets configured)
 these 4 derivations will be built:
   /nix/store/ncjc9ppbkah02375xzh0hxl73yxr5pj7-bazel-go-toolchain-go-version.drv
   /nix/store/hh0ss11kiini8ajm0l5l11r9l6lbqdar-builder.pl.drv
@@ -148,14 +148,14 @@ building '/nix/store/yyr5a7zxj30mgxrwiqa3z0n1la7nn742-bazel-go-toolchain.drv'...
 created 2 symlinks in user environment
 building '/nix/store/35q12y2aq3ph8sh40j5fqfdd9wll9kf1-bazel-go-toolchain.drv'...
 /nix/store/qjynhwar1pjwgi4dfkc069a8jjbihmwr-bazel-go-toolchain
-[32mINFO: [0mRepository sdk_go_nix instantiated at:
+INFO: Repository sdk_go_nix instantiated at:
   /build/0hc0kj34zdpgmlnn23wbhywlmh37p124-source/WORKSPACE:51:21: in <toplevel>
   /build/output/external/rules_nixpkgs_go/go.bzl:398:20: in nixpkgs_go_configure
   /build/output/external/rules_nixpkgs_core/nixpkgs.bzl:676:21: in nixpkgs_package
 Repository rule _nixpkgs_package defined at:
   /build/output/external/rules_nixpkgs_core/nixpkgs.bzl:549:35: in <toplevel>
-[32mAnalyzing:[0m target //cmd/nixbazelgotemplate:nixbazelgotemplate (45 packages loaded, 260 targets configured)
-[31m[1mERROR: [0mAn error occurred during the fetch of repository 'sdk_go_nix':
+Analyzing: target //cmd/nixbazelgotemplate:nixbazelgotemplate (45 packages loaded, 260 targets configured)
+ERROR: An error occurred during the fetch of repository 'sdk_go_nix':
    Traceback (most recent call last):
 	File "/build/output/external/rules_nixpkgs_core/nixpkgs.bzl", line 547, column 31, in _nixpkgs_package_impl
 		_nixpkgs_build_and_symlink(repository_ctx, nix_build, build_file_content)
@@ -169,7 +169,7 @@ Error in fail:
     Return code: 1
     Error output: 
 
-[31m[1mERROR: [0m/build/0hc0kj34zdpgmlnn23wbhywlmh37p124-source/WORKSPACE:51:21: fetching _nixpkgs_package rule //external:sdk_go_nix: Traceback (most recent call last):
+ERROR: /build/0hc0kj34zdpgmlnn23wbhywlmh37p124-source/WORKSPACE:51:21: fetching _nixpkgs_package rule //external:sdk_go_nix: Traceback (most recent call last):
 	File "/build/output/external/rules_nixpkgs_core/nixpkgs.bzl", line 547, column 31, in _nixpkgs_package_impl
 		_nixpkgs_build_and_symlink(repository_ctx, nix_build, build_file_content)
 	File "/build/output/external/rules_nixpkgs_core/nixpkgs.bzl", line 417, column 20, in _nixpkgs_build_and_symlink
@@ -182,20 +182,20 @@ Error in fail:
     Return code: 1
     Error output: 
 
-[31m[1mERROR: [0m/build/output/external/sdk_go_nix_toolchains/BUILD.bazel:4:19: @sdk_go_nix_toolchains//:toolchain_go_linux_amd64-impl depends on @sdk_go_nix//:builder in repository @sdk_go_nix which failed to fetch. no such package '@sdk_go_nix//': 
+ERROR: /build/output/external/sdk_go_nix_toolchains/BUILD.bazel:4:19: @sdk_go_nix_toolchains//:toolchain_go_linux_amd64-impl depends on @sdk_go_nix//:builder in repository @sdk_go_nix which failed to fetch. no such package '@sdk_go_nix//': 
   Package '@sdk_go_nix' outputs a single file which is not supported by rules_nixpkgs. Please only use directories.
     Command: "/nix/store/whinz9rj5h6h8zxp9bkmfzv7fkzc0cq8-coreutils-9.3/bin/test" "-d" "/nix/store/qjynhwar1pjwgi4dfkc069a8jjbihmwr-bazel-go-toolchain"
     Return code: 1
     Error output: 
 
-[31m[1mERROR: [0m/build/output/external/sdk_go_nix_toolchains/BUILD.bazel:4:19: @sdk_go_nix_toolchains//:toolchain_go_linux_amd64-impl depends on @sdk_go_nix//:go_sdk in repository @sdk_go_nix which failed to fetch. no such package '@sdk_go_nix//': 
+ERROR: [0m/build/output/external/sdk_go_nix_toolchains/BUILD.bazel:4:19: @sdk_go_nix_toolchains//:toolchain_go_linux_amd64-impl depends on @sdk_go_nix//:go_sdk in repository @sdk_go_nix which failed to fetch. no such package '@sdk_go_nix//': 
   Package '@sdk_go_nix' outputs a single file which is not supported by rules_nixpkgs. Please only use directories.
     Command: "/nix/store/whinz9rj5h6h8zxp9bkmfzv7fkzc0cq8-coreutils-9.3/bin/test" "-d" "/nix/store/qjynhwar1pjwgi4dfkc069a8jjbihmwr-bazel-go-toolchain"
     Return code: 1
     Error output: 
 
-[31m[1mERROR: [0mAnalysis of target '//cmd/nixbazelgotemplate:nixbazelgotemplate' failed; build aborted: 
-[32mINFO: [0mElapsed time: 45.452s
-[32mINFO: [0m0 processes.
-[31m[1mFAILED:[0m Build did NOT complete successfully (45 packages loaded, 260 targets configured)
-[0```
+ERROR: Analysis of target '//cmd/nixbazelgotemplate:nixbazelgotemplate' failed; build aborted: 
+INFO: Elapsed time: 45.452s
+INFO: 0 processes.
+FAILED: Build did NOT complete successfully (45 packages loaded, 260 targets configured)
+```
