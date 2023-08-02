@@ -7,10 +7,10 @@ buildBazelPackage {
   name = "nixbazelgotemplate";
 
   bazel = pkgs.bazel_6;
-  bazelTargets = ["cmd/nixbazelgotemplate:nixbazelgotemplate"];
-  bazelFlags = ["--config=nix"];
+  bazelTargets = ["//cmd/nixbazelgotemplate:nixbazelgotemplate"];
+  bazelFlags = ["--explain=nixbuild.log" "--verbose_explanations"];
 
-  nativeBuildInputs = with pkgs; [nix];
+  nativeBuildInputs = with pkgs; [nix go];
   buildInputs = with pkgs; [cacert];
   buildAttrs = {
     installPhase = ''
@@ -19,5 +19,5 @@ buildBazelPackage {
   };
 
   src = pkgs.nix-gitignore.gitignoreSource [] (lib.cleanSource ./.);
-  fetchAttrs.sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+  fetchAttrs.sha256 = "sha256-m/ue5ZUeadQz6iIVr2San2NyPLA1ja2rA7XA24cmm2A=";
 }
