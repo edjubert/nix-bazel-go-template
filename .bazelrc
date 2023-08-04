@@ -2,7 +2,7 @@
 test --test_output=errors
 
 # Nix toolchains usable using --config=nix
-build:nix --host_platform=@io_tweag_rules_nixpkgs//nixpkgs/platforms:host
+build --host_platform=@io_tweag_rules_nixpkgs//nixpkgs/platforms:host
 
 #
 # Extra user config

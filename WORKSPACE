@@ -25,10 +25,7 @@ nixpkgs_local_repository(
 )
 
 # define a cc toolchain provided by nixpkgs, this toolchain is not used by default
-nixpkgs_cc_configure(
-    name = "nixpkgs_config_cc",
-    repository = "@nixpkgs",
-)
+nixpkgs_cc_configure(repository = "@nixpkgs")
 
 #
 # Go rules
@@ -48,14 +45,7 @@ go_rules_dependencies()
 load("@io_tweag_rules_nixpkgs//nixpkgs:toolchains/go.bzl", "nixpkgs_go_configure")
 
 # define a go toolchain provided by nixpkgs, this toolchain is not used by default
-nixpkgs_go_configure(
-  repository = "@nixpkgs",
-  sdk_name = "sdk_go_nix",
-)
-
-load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
-
-go_register_toolchains(version = "1.20.5")
+nixpkgs_go_configure(repository = "@nixpkgs")
 
 #
 # Gazelle rules
@@ -73,5 +63,5 @@ load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 gazelle_dependencies()
 
 # uncomment this section if you have go dependencies to add
-# load("//:repositories.bzl", "go_repositories")
-# go_repositories()
+load("//:repositories.bzl", "go_repositories")
+go_repositories()
